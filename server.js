@@ -12,7 +12,7 @@ var middleware = {
 		//new Date().toString()
 
 		console.log('Request: '+ new Date().toString()+ ' '+ req.method+ ' ' + req.originalUrl);
-		console.log(req)
+		console.log(req) 
 		next();
 	}
 };
@@ -29,7 +29,7 @@ app.use(middleware.logger);// appel de la methode logger
 //About Us page
 
 app.get('/about',middleware.requireAuthentification, function (req,res){//('/ le slash sert au routage')
-	res.send('hello about page!');
+	res.send('hello about page!!!');
 	});
 
 app.use(express.static(__dirname+"\\public")); 
