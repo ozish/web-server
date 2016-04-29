@@ -2,11 +2,13 @@ var express= require ('express');
 var app = express();
 var PORT = 3000; //variable en MAJUSCULE = Cste
 
+var middleware = require('./middleware.js');
 //creation d'un nouvel objet
-var middleware = {
+// et exportation dans le fichier middleware.js de tout ce qui est en commentaire
+/*var middleware = {
 	requireAuthentification : function(req,res,next){// le next permet de renvoyer une erreur
 		console.log('private route hit')
-		next();
+		next(); 
 	},
 	logger: function (req,res,next){
 		//new Date().toString()
@@ -15,7 +17,7 @@ var middleware = {
 		console.log(req) 
 		next();
 	}
-};
+};*/
 
 app.use(middleware.logger);// appel de la methode logger
 
